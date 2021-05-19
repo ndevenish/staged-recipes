@@ -1,9 +1,6 @@
 # Don't run build jobs for branches
 trigger:
   batch: true
-  branches:
-    exclude:
-      - "*"
 
 # Still allow PR builds to run against master
 pr:
@@ -12,4 +9,3 @@ pr:
 jobs:
   - template: ./.azure-pipelines/azure-pipelines-linux.yml
   - template: ./.azure-pipelines/azure-pipelines-osx.yml
-  - template: ./.azure-pipelines/azure-pipelines-win.yml
