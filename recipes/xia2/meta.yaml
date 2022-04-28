@@ -68,6 +68,7 @@ test:
     - pip
     - pytest
     - dials-data
+    - pytest-mock
   commands:
     - pip check
     - pytest $SRC_DIR/tests  # [not win]
