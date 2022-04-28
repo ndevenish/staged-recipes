@@ -6,8 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/xia2/xia2/archive/v{{ version }}.tar.gz
-  sha256: 6663c07e6221b2e25e5023d076ded81f3b093926ae30c408bd39336fe3120638
+  # url: https://github.com/xia2/xia2/archive/v{{ version }}.tar.gz
+  # sha256: 6663c07e6221b2e25e5023d076ded81f3b093926ae30c408bd39336fe3120638
+  git_url: https://github.com/xia2/xia2.git
+  git_rev: main
 
 build:
   noarch: python
