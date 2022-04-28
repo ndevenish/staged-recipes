@@ -65,6 +65,7 @@ test:
   requires:
     - pip
     - pytest
+    - dials-data
   commands:
     - pip check
     - pytest $SRC_DIR/tests  # [not win]
