@@ -58,8 +58,8 @@ requirements:
 
 test:
   source_files:
-    - xia2/tests
-    - xia2/conftest.py
+    - tests
+    - conftest.py
   imports:
     - xia2
   requires:
@@ -67,8 +67,8 @@ test:
     - pytest
   commands:
     - pip check
-    - pytest $SRC_DIR/dxtbx/tests  # [not win]
-    - pytest %SRC_DIR%/dxtbx/tests  # [win]
+    - pytest $SRC_DIR/tests  # [not win]
+    - pytest %SRC_DIR%/tests  # [win]
 
 about:
   home: https://github.com/xia2/xia2
