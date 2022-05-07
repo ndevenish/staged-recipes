@@ -11,7 +11,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://fg.oisin.rc-harwell.ac.uk/scm/loggerhead/libccp4/trunk/tarball/{{ revision }}}}?start_revid={{ revision }}
+  url: http://fg.oisin.rc-harwell.ac.uk/scm/loggerhead/libccp4/trunk/tarball/{{ revision }}?start_revid={{ revision }}
 
 build:
   number: 0
