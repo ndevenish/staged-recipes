@@ -1,17 +1,13 @@
-# Note: there are many handy hints in comments in this example -- remove them when you've finalized your recipe
-# If your package is python based, we recommend using Grayskull to generate it instead:
-# https://github.com/conda-incubator/grayskull
 {% set name = "libccp4" %}
 {% set version = "8.0.0" %}
-# The bzr revision id to pull
-{% set revision = 1895 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://fg.oisin.rc-harwell.ac.uk/scm/loggerhead/libccp4/trunk/tarball/{{ revision }}?start_revid={{ revision }}
+  url: https://github.com/ndevenish/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 298d1517723d95548c3d916c326d8054b2fa1e11b2a5e44822fe7a2bada50178
 
 build:
   number: 0

@@ -1,35 +1,24 @@
-# Note: there are many handy hints in comments in this example -- remove them when you've finalized your recipe
-# If your package is python based, we recommend using Grayskull to generate it instead:
-# https://github.com/conda-incubator/grayskull
 {% set name = "mmdb2" %}
-{% set version = "8.0.0" %}
-# The bzr revision id to pull
-{% set revision = 58 %}
+{% set version = "2.0.22" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://fg.oisin.rc-harwell.ac.uk/scm/loggerhead/mmdb2/trunk/tarball/{{ revision }}}}?start_revid={{ revision }}
+  url: https://github.com/ndevenish/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 4529a4078dd7da1adbb2432bbb62b47911bffbd72cae4ec02042d52c4f03330a
 
 build:
   number: 0
 
 requirements:
   build:
-    # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.
-    # Compilers are named 'c', 'cxx' and 'fortran'.
     - {{ compiler('c') }}
 
 about:
-  home: http://fg.oisin.rc-harwell.ac.uk/projects/libccp4/
-  summary: 'libccp4'
-  description: |
-    simplejson is a simple, fast, complete, correct and extensible
-    JSON <https://json.org> encoder and decoder for Python 2.5+ and
-    Python 3.3+. It is pure Python code with no dependencies, but includes
-    an optional C extension for a serious speed boost.
+  home: http://fg.oisin.rc-harwell.ac.uk/projects/mmdb2/
+  summary: 'CCP4 Coordinate Library: support of coordinate-related functionality in protein crystallography applications.'
   license: LGPL-3.0-only
   license_family: LGPL
   license_file:
