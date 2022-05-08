@@ -15,6 +15,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - make
 
 about:
   home: http://fg.oisin.rc-harwell.ac.uk/projects/mmdb2/
