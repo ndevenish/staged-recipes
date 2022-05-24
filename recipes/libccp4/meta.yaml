@@ -20,6 +20,8 @@ requirements:
     - ninja
     - m4
     - mmdb2
+  host:
+    - mmdb2
 
 about:
   home: http://fg.oisin.rc-harwell.ac.uk/projects/libccp4/
