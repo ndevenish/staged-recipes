@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 mkdir _build
-cmake ../libccp4/trunk
+cd _build
+cmake ../libccp4/trunk ${CMAKE_ARGS}
+cmake --build .
+cmake --install .

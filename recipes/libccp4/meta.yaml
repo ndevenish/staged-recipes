@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/ndevenish/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 298d1517723d95548c3d916c326d8054b2fa1e11b2a5e44822fe7a2bada50178
+  url: http://ftp.ccp4.ac.uk/opensource/{{ name }}-{{ version }}.tar.gz
+  sha256: cb813ae86612a0866329deab7cee96eac573d81be5b240341d40f9ad5322ff2d
 
 build:
   number: 0
@@ -18,6 +18,8 @@ requirements:
     # Compilers are named 'c', 'cxx' and 'fortran'.
     - {{ compiler('c') }}
     - cmake
+  host:
+    - mmdb2
 
 about:
   home: http://fg.oisin.rc-harwell.ac.uk/projects/libccp4/
