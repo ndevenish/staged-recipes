@@ -14,7 +14,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - make
 
 about:
   home: http://fg.oisin.rc-harwell.ac.uk/projects/mmdb2/
@@ -22,8 +23,8 @@ about:
   license: LGPL-3.0-only
   license_family: LGPL
   license_file:
-    - libccp4/trunk/COPYING.LESSER
-    - libccp4/trunk/COPYING
+    - COPYING.LESSER
+    - COPYING
 
 extra:
   recipe-maintainers:
