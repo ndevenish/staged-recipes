@@ -1,13 +1,13 @@
 {% set name = "mmdb2" %}
-{% set version = "2.0.22" %}
+{% set version = "2.0.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ndevenish/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4529a4078dd7da1adbb2432bbb62b47911bffbd72cae4ec02042d52c4f03330a
+  url: http://ftp.ccp4.ac.uk/opensource/{{ name }}-{{ version }}.tar.gz
+  sha256: 7be92fa9348c83384111687e8e093dcc92f609e6caaad78f6275317aa0de1320
 
 build:
   number: 0
