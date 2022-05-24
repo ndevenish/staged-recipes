@@ -18,6 +18,7 @@ requirements:
     # Compilers are named 'c', 'cxx' and 'fortran'.
     - {{ compiler('c') }}
     - cmake
+    - ninja
   host:
     - mmdb2
 
