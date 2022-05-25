@@ -15,13 +15,17 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('fortran') }}
+    # - {{ compiler('fortran') }}
     - cmake
     - ninja
-    - m4
-    - mmdb2
-  host:
-    - mmdb2
+  #   - m4
+  #   - mmdb2
+  # host:
+  #   - mmdb2
+
+# outputs:
+#   - name: libccp4c
+#   - name: libccp4f
 
 about:
   home: http://fg.oisin.rc-harwell.ac.uk/projects/libccp4/
