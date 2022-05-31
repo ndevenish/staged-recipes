@@ -12,7 +12,7 @@ source:
 build:
   python: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - parquet = parquet.__main__:main
 
