@@ -10,8 +10,11 @@ source:
   sha256: fb1c90768c1b9159d4d6a9b3112ea8107b0b46d7491c5ac452ba7350f333bf0a
 
 build:
+  python: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
+  entry_points:
+    - parquet = parquet.__main__:main
 
 requirements:
   host:
