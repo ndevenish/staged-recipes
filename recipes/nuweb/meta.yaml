@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://sourceforge.net/projects/{{ name }}/files/{{ name }}-{{ version }}.tar.gz/download
-  sha256: fbf4ff8f27690027bceac799262b43cc27cad51261799111d512d2faf1044c9b
+  sha256: 255a8f62460f5c14f4c4b356b96e0357a37a6652ae0584064f8e9fae19e953ae
 
 build:
   script: |
