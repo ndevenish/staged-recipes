@@ -19,7 +19,8 @@ source:
 build:
   script: |
     make nuweb CC=$CC
-    install -vD nuweb $PREFIX/bin/nuweb
+    mkdir -p $PREFIX/bin
+    cp nuweb $PREFIX/bin/nuweb
   number: 0
   skip: true  # [win]
 
@@ -28,9 +29,9 @@ requirements:
     - {{ compiler('c') }}
     - make
 
-# test:
-#   commands:
-#     - nuweb --help
+test:
+  commands:
+    - nuweb --help
 
 about:
   home: http://nuweb.sourceforge.net/
