@@ -13,11 +13,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://sourceforge.net/projects/{{ nuweb }}/files/{{ name }}-{{ version }}.tar.gz/download
+  url: https://sourceforge.net/projects/{{ name }}/files/{{ name }}-{{ version }}.tar.gz/download
   sha256: fbf4ff8f27690027bceac799262b43cc27cad51261799111d512d2faf1044c9b
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
+  script: |
+    make nuweb
+    cp nuweb $PREFIX/bin
   number: 0
   skip: true  # [win]
 
@@ -30,7 +32,7 @@ requirements:
 
 test:
   commands:
-    - pip check
+    - nuweb --help
 
 about:
   home: http://nuweb.sourceforge.net/
