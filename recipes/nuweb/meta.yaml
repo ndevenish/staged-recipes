@@ -1,0 +1,50 @@
+# Note: there are many handy hints in comments in this example -- remove them when you've finalized your recipe
+# If your package is python based, we recommend using Grayskull to generate it instead:
+# https://github.com/conda-incubator/grayskull
+
+# Jinja variables help maintain the recipe as you'll update the version only here.
+# Using the name variable with the URL in line 14 is convenient
+# when copying and pasting from another recipe, but not really needed.
+{% set name = "nuweb" %}
+{% set version = "1.62" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://sourceforge.net/projects/{{ nuweb }}/files/{{ name }}-{{ version }}.tar.gz/download
+  sha256: fbf4ff8f27690027bceac799262b43cc27cad51261799111d512d2faf1044c9b
+
+build:
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+  skip: true  # [win]
+
+requirements:
+  build:
+    # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.
+    # Compilers are named 'c', 'cxx' and 'fortran'.
+    - {{ compiler('c') }}
+    - make
+
+test:
+  commands:
+    - pip check
+
+about:
+  home: http://nuweb.sourceforge.net/
+  summary: 'nuweb for Literate Programming'
+  description: |
+    In 1984, Knuth introduced the idea of literate programming. The idea
+    was that a programmer wrote one document, the web file, that
+    combined documentation with code. Nuweb works with any programming
+    language and LaTeX.
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  dev_url: https://sourceforge.net/projects/nuweb/
+
+extra:
+  recipe-maintainers:
+    - ndevenish
