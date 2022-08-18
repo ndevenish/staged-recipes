@@ -18,9 +18,8 @@ source:
 
 build:
   script: |
-    set -x
     make nuweb CC=$CC
-    cp nuweb $PREFIX/bin/
+    install -t $PREFIX/bin nuweb
   number: 0
   skip: true  # [win]
 
