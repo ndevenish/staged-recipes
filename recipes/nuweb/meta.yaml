@@ -31,7 +31,7 @@ requirements:
 
 test:
   commands:
-    - nuweb --help
+    - nuweb -h
 
 about:
   home: http://nuweb.sourceforge.net/
