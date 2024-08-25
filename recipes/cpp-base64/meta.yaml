@@ -2,7 +2,8 @@
 {% set version = "2rc8" %}
 
 {% set version_parts = version.split('rc') %}
-{% set version_rc = version_parts[0] ~ '.rc.' ~ ('%02d' % int(version_parts[1])) %}
+{% set rc_number = version_parts[1] | int %}
+{% set version_rc = version_parts[0] ~ '.rc.' ~ ('%02d' % rc_number) %}
 
 package:
   name: {{ name|lower }}
