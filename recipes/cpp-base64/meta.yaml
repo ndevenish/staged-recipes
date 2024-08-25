@@ -1,0 +1,37 @@
+{% set name = "cpp-base64" %}
+{% set version = "2rc8" %}
+
+{% set version_parts = version.split('rc') %}
+{% set version_rc = version_parts[0] ~ '.rc.' ~ ('%02d' % version_parts[1]) %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/ReneNyffenegger/cpp-base64/archive/refs/tags/V{{ version_rc }}.tar.gz
+  sha256: 0a7ada789a99c2664437f1db8c38b60fe5815cf82b75bea0f0c08933c1317828
+
+build:
+  number: 0
+  skip: true #[win]
+
+requirements:
+  build:
+    - make
+    - {{ stdlib("c") }}
+    - {{ compiler('cxx') }}
+
+test:
+  source_files:
+  - build/test
+  commands:
+    - build/test
+
+about:
+  license: Zlib
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - ndevenish
