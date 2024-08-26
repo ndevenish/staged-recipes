@@ -1,0 +1,48 @@
+{% set name = "lib3mf-python" %}
+{% set version = "2.3.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/3MFConsortium/lib3mf/archive/v{{ version }}.tar.gz
+  sha256: 6e95b05463209425d80ba0e2244fe42f3c761054f6a9e9275a6c81aafea02d05
+  folder: lib3mf_source
+  patches:
+    - 0001-Use-ctypes.util-to-find-library.patch
+
+build:
+  noarch: python
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - lib3mf ={{ version }}
+
+test:
+  imports:
+    - lib3mf
+  commands:
+    - pip check
+    - python3 -c "import lib3mf; lib3mf.Wrapper()"
+  requires:
+    - pip
+    - python
+
+about:
+  home: https://3mf.io
+  dev_url: https://github.com/3MFConsortium/lib3mf
+  summary: lib3mf is an implementation of the 3D Manufacturing Format file standard
+  license: BSD-2-Clause
+  license_family: BSD
+  license_file:
+    - LICENSE
+
+extra:
+  recipe-maintainers:
+    - ndevenish
